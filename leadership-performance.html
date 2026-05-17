@@ -105,15 +105,35 @@
 
     /* ─── HEADER ─── */
     .page-header {
-      min-height: 50vh;
+      min-height: 60vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
       padding: 8rem 2.5rem 6rem;
+      background: var(--off-white);
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .header-content {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      background: linear-gradient(135deg, rgba(245,245,243,0.85) 0%, rgba(250,250,248,0.82) 100%),
-                  url('birdseyeview.jpg') center/cover no-repeat;
-      border-bottom: 1px solid var(--light-gray);
-      position: relative;
+    }
+
+    .header-image {
+      height: 100%;
+      min-height: 400px;
+      overflow: hidden;
+      border-radius: 4px;
+      border: 1px solid var(--light-gray);
+    }
+
+    .header-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .section-label {
@@ -335,7 +355,15 @@
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       section { padding: 4rem 1.5rem; }
-      .page-header { padding: 6rem 1.5rem 4rem; }
+      .page-header { 
+        grid-template-columns: 1fr; 
+        padding: 6rem 1.5rem 4rem; 
+        gap: 2rem;
+      }
+      .header-image { 
+        min-height: 300px; 
+        order: -1;
+      }
       h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
       .articles-grid { grid-template-columns: 1fr; }
       .framework-points { grid-template-columns: 1fr; }
@@ -363,9 +391,14 @@
 
   <!-- HEADER -->
   <section class="page-header">
-    <div class="section-label">Insights & Frameworks</div>
-    <h1>Leadership in <em>Complexity</em></h1>
-    <p>Thoughts on navigating organizational challenges, developing leadership capability, and building high-performing teams. Grounded in research, practice, and real-world experience.</p>
+    <div class="header-image">
+      <img src="birdseyeview.jpg" alt="Organizational complexity perspective">
+    </div>
+    <div class="header-content">
+      <div class="section-label">Insights & Frameworks</div>
+      <h1>Leadership in <em>Complexity</em></h1>
+      <p>Thoughts on navigating organizational challenges, developing leadership capability, and building high-performing teams. Grounded in research, practice, and real-world experience.</p>
+    </div>
   </section>
 
   <!-- INSIGHTS SECTION -->
