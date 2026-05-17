@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership & Performance · CORTEX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0F2747;
+      --bordeaux: #4A0F1E;
+      --black: #0B0B0B;
+      --off-white: #F5F5F3;
+      --soft-white: #FAFAF8;
+      --light-gray: #E6E6E4;
+      --warm-gray: #DAD7D2;
+      --text-gray: #666666;
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --mono: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--off-white);
+      color: var(--black);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.2rem 2.5rem;
+      background: var(--off-white);
+      border-bottom: 1px solid var(--light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s;
+    }
+
+    nav.scrolled {
+      background: rgba(245,245,243,0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-links a.active {
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .nav-cta {
+      background: var(--navy);
+      color: var(--off-white) !important;
+      padding: 0.65rem 1.6rem;
+      border-radius: 3px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+
+    .nav-cta:hover { background: var(--bordeaux); }
+
+    /* ─── HEADER ─── */
+    .page-header {
+      min-height: 50vh;
+      padding: 8rem 2.5rem 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--off-white) 0%, var(--soft-white) 100%);
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-label::before { content: '◆'; font-size: 0.5rem; }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: var(--black);
+      max-width: 700px;
+    }
+
+    h1 em {
+      color: var(--bordeaux);
+      font-style: italic;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    /* ─── CONTENT ─── */
+    section {
+      padding: 6rem 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      color: var(--black);
+    }
+
+    h2 em { color: var(--bordeaux); font-style: italic; }
+
+    h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--black);
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    p {
+      color: var(--text-gray);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      max-width: 700px;
+    }
+
+    /* ─── ARTICLES GRID ─── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin: 3rem 0;
+    }
+
+    .article-card {
+      background: var(--soft-white);
+      border-radius: 4px;
+      border: 1px solid var(--light-gray);
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card:hover {
+      border-color: var(--navy);
+      box-shadow: 0 12px 32px rgba(15,39,71,0.1);
+      transform: translateY(-4px);
+    }
+
+    .article-header {
+      padding: 2rem 2rem 1rem;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .article-date {
+      font-size: 0.8rem;
+      color: var(--navy);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-title {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      color: var(--black);
+      margin-bottom: 0;
+    }
+
+    .article-body {
+      padding: 1.5rem 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-excerpt {
+      color: var(--text-gray);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .article-link {
+      font-weight: 500;
+      color: var(--navy);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+      align-self: flex-start;
+    }
+
+    .article-link:hover { color: var(--bordeaux); }
+
+    .article-link::after { content: '→'; }
+
+    /* ─── FRAMEWORK SECTION ─── */
+    .framework-box {
+      background: var(--navy);
+      color: var(--off-white);
+      padding: 3rem;
+      border-radius: 4px;
+      margin: 4rem 0;
+    }
+
+    .framework-box h3 { color: var(--off-white); margin-top: 0; }
+
+    .framework-box p { color: rgba(245,245,243,0.9); max-width: none; }
+
+    .framework-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .framework-point {
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      border-left: 3px solid var(--bordeaux);
+    }
+
+    .framework-point h4 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--off-white);
+      margin-bottom: 0.5rem;
+    }
+
+    .framework-point p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: rgba(245,245,243,0.85);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--black);
+      color: var(--off-white);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      border-top: 1px solid var(--navy);
+      margin-top: 4rem;
+    }
+
+    footer p {
+      color: var(--off-white);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--off-white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--bordeaux); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .page-header { padding: 6rem 1.5rem 4rem; }
+      h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
+      .articles-grid { grid-template-columns: 1fr; }
+      .framework-points { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="/" class="nav-logo">
+      <img src="logo black.png" alt="CORTEX" class="nav-logo-img" />
+      
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/leadership-performance.html" class="active">Leadership & Performance</a></li>
+      <li><a href="/coaching.html">Coaching</a></li>
+      <li><a href="/speaking.html">Speaking</a></li>
+    </ul>
+    <a href="/contact.html" class="nav-cta">Get In Touch</a>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="page-header">
+    <div class="section-label">Insights & Frameworks</div>
+    <h1>Leadership in <em>Complexity</em></h1>
+    <p>Thoughts on navigating organizational challenges, developing leadership capability, and building high-performing teams. Grounded in research, practice, and real-world experience.</p>
+  </section>
+
+  <!-- INSIGHTS SECTION -->
+  <section>
+    <h2>Featured <em>Insights</em></h2>
+    
+    <div class="articles-grid">
+      <div class="article-card">
+        <div class="article-header">
+          <div class="article-date">Leadership</div>
+          <h3 class="article-title">Complexity & Leadership</h3>
+        </div>
+        <div class="article-body">
+          <p class="article-excerpt">What does it mean to lead effectively in complex environments? How do leaders think about uncertainty, ambiguity, and the decisions that matter most?</p>
+          <a href="#" class="article-link">Read more</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-header">
+          <div class="article-date">Performance</div>
+          <h3 class="article-title">Understanding Human Performance</h3>
+        </div>
+        <div class="article-body">
+          <p class="article-excerpt">What actually drives performance? Beyond the obvious metrics, what conditions allow people and teams to do their best work consistently?</p>
+          <a href="#" class="article-link">Read more</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-header">
+          <div class="article-date">Development</div>
+          <h3 class="article-title">Leadership Development Matters</h3>
+        </div>
+        <div class="article-body">
+          <p class="article-excerpt">Why does deliberate leadership development matter? How do leaders grow into bigger roles and greater impact?</p>
+          <a href="#" class="article-link">Read more</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-header">
+          <div class="article-date">Culture</div>
+          <h3 class="article-title">Building High-Performing Teams</h3>
+        </div>
+        <div class="article-body">
+          <p class="article-excerpt">What separates great teams from good ones? The role of psychological safety, clarity, and intentional culture-building.</p>
+          <a href="#" class="article-link">Read more</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-header">
+          <div class="article-date">Insight</div>
+          <h3 class="article-title">Self-Awareness in Leadership</h3>
+        </div>
+        <div class="article-body">
+          <p class="article-excerpt">The foundation of effective leadership is knowing yourself. Your patterns, your triggers, your impact on others.</p>
+          <a href="#" class="article-link">Read more</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-header">
+          <div class="article-date">Reflection</div>
+          <h3 class="article-title">Decision-Making Under Uncertainty</h3>
+        </div>
+        <div class="article-body">
+          <p class="article-excerpt">When the stakes are high and the path forward isn't clear, how do effective leaders make decisions?</p>
+          <a href="#" class="article-link">Read more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAMEWORK SECTION -->
+  <section class="framework-box">
+    <h3>Core Leadership Framework</h3>
+    <p>At the heart of effective leadership across contexts is a simple framework: clarity, capability, commitment, and conditions.</p>
+    
+    <div class="framework-points">
+      <div class="framework-point">
+        <h4>Clarity</h4>
+        <p>Do people understand the direction, the why, and what success looks like? Ambiguity kills performance.</p>
+      </div>
+      <div class="framework-point">
+        <h4>Capability</h4>
+        <p>Do people have the skills, knowledge, and tools they need? Development is a leadership responsibility.</p>
+      </div>
+      <div class="framework-point">
+        <h4>Commitment</h4>
+        <p>Do people believe in the mission and feel valued? Purpose and recognition drive sustained effort.</p>
+      </div>
+      <div class="framework-point">
+        <h4>Conditions</h4>
+        <p>Is the environment one where people can think, speak, and act with safety? Culture matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 CORTEX · Leadership & Performance</p>
+    <p style="font-size: 0.85rem; color: rgba(245,245,243,0.7); margin-top: 1rem;">Shannon Corley</p>
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/leadership-performance.html">Insights</a>
+      <a href="/coaching.html">Coaching</a>
+      <a href="/speaking.html">Speaking</a>
+      <a href="/contact.html">Contact</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.pathname === window.location.pathname) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
