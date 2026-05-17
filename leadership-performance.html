@@ -260,9 +260,10 @@
     .framework-box {
       background: var(--navy);
       color: var(--off-white);
-      padding: 3rem 3rem;
-      border-radius: 4px;
-      margin: 4rem -2.5rem;
+      padding: 3rem 2.5rem;
+      border-radius: 0;
+      margin: 0 0 0 0;
+      max-width: none;
     }
 
     .framework-box h3 { color: var(--off-white); margin-top: 0; }
@@ -338,6 +339,7 @@
       h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
       .articles-grid { grid-template-columns: 1fr; }
       .framework-points { grid-template-columns: 1fr; }
+      .framework-box { padding: 3rem 1.5rem; }
     }
   </style>
 </head>
