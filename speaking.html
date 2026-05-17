@@ -193,14 +193,19 @@
     .speaking-intro-text p { max-width: none; }
 
     .speaking-visual {
-      background: var(--soft-white);
       aspect-ratio: 4/3;
       border-radius: 4px;
       border: 1px solid var(--light-gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-gray);
+      overflow: hidden;
+      background: var(--soft-white);
+    }
+
+    .speaking-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     /* ─── TOPICS GRID ─── */
@@ -395,7 +400,8 @@
         <p>Whether it's a keynote setting the stage for a conference, a workshop where your team actually learns something new, or a smaller roundtable conversation, the goal is always the same: leave people thinking differently, with clarity on what matters next.</p>
       </div>
       <div class="speaking-visual">
-        [Speaking engagement image — TBD]
+        <!-- Speaking engagement image to be added -->
+        <div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-gray);font-size:0.9rem;">Speaking engagement photo</div>
       </div>
     </div>
   </section>
