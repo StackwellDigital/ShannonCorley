@@ -63,7 +63,7 @@
     }
 
     .nav-logo-img {
-      height: 32px;
+      height: 56px;
       width: auto;
     }
 
@@ -106,12 +106,32 @@
     /* ─── HERO ─── */
     .hero {
       min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
       padding: 8rem 2.5rem 6rem;
+      background: var(--off-white);
+    }
+
+    .hero-content {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: flex-start;
-      background: linear-gradient(135deg, var(--off-white) 0%, var(--soft-white) 100%);
+    }
+
+    .hero-image {
+      height: 100%;
+      min-height: 600px;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 4px;
     }
 
     .hero-tag {
@@ -337,7 +357,15 @@
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       section { padding: 4rem 1.5rem; }
-      .hero { padding: 6rem 1.5rem 4rem; }
+      .hero { 
+        grid-template-columns: 1fr; 
+        padding: 6rem 1.5rem 4rem; 
+        gap: 2rem;
+      }
+      .hero-image { 
+        min-height: 400px; 
+        order: -1;
+      }
       h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
       .insights-grid { grid-template-columns: 1fr; }
     }
@@ -362,12 +390,17 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-tag">Leadership & Performance Insights</div>
-    <h1>Navigate Complexity.<br /><em>Drive Impact.</em></h1>
-    <p class="hero-sub">Insights and coaching for leaders navigating complexity and driving meaningful impact. Strategic perspective on leadership development, organizational performance, and human potential.</p>
-    <div class="hero-cta">
-      <a href="/coaching.html" class="btn btn-primary">Explore Coaching</a>
-      <a href="/contact.html" class="btn btn-secondary">Get In Touch</a>
+    <div class="hero-content">
+      <div class="hero-tag">Leadership & Performance Insights</div>
+      <h1>Navigate Complexity.<br /><em>Drive Impact.</em></h1>
+      <p class="hero-sub">Insights and coaching for leaders navigating complexity and driving meaningful impact. Strategic perspective on leadership development, organizational performance, and human potential.</p>
+      <div class="hero-cta">
+        <a href="/coaching.html" class="btn btn-primary">Explore Coaching</a>
+        <a href="/contact.html" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="pUxPLkH5TXaXVC2csGfMgOueOlz_Xx9KxDC8ZkpXR5PyorfWMug6wBOBw08sJ9_TtVK2vuEZG2L6Fgxu_QgM1IK716RTOKcRDnzl6sF9UVCJSUMjhkv0Q0H647XD00OAS_6cF_DZtuc5FBOzrDFYbR_RCenpKeWXSx4Fm1pFc0ox90wrtIqtxusCM15xTGQE.jpg" alt="Leadership and Performance">
     </div>
   </section>
 
