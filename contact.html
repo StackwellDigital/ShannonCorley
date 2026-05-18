@@ -384,22 +384,23 @@
     }
 
     .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: var(--off-white);
-      z-index: 150;
+      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 2rem;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--off-white);
+      z-index: 150;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
     }
 
     .mobile-menu.open {
-      display: flex;
       opacity: 1;
+      pointer-events: all;
     }
 
     .mobile-menu a {
@@ -462,6 +463,16 @@
       <span></span>
     </button>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/leadership-performance.html">Leadership &amp; Performance</a>
+    <a href="/coaching.html">Coaching</a>
+    <a href="/speaking.html">Speaking</a>
+    <a href="/contact.html" class="mobile-cta">Get In Touch</a>
+  </div>
 
   <!-- HEADER -->
   <section class="page-header">
