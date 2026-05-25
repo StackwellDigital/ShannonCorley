@@ -1,537 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Shannon Corley · CORTEX</title>
-  <meta name="description" content="Shannon Corley is an executive coach and leadership advisor helping leaders navigate complexity and drive meaningful organizational performance." />
-  <link rel="canonical" href="https://www.cortexlp.com/about.html" />
-  <meta property="og:title" content="About Shannon Corley · CORTEX" />
-  <meta property="og:description" content="Shannon Corley is an executive coach and leadership advisor helping leaders navigate complexity and drive meaningful organizational performance." />
-  <meta property="og:url" content="https://www.cortexlp.com/about.html" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKS8T9G406"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EKS8T9G406');
-</script>
+  <meta name="description" content="Shannon Corley is an executive coach and leadership advisor helping leaders navigate complexity and drive meaningful organizational performance."/>
+  <link rel="canonical" href="https://www.cortexlp.com/about.html"/>
+  <meta property="og:title" content="About Shannon Corley · CORTEX"/>
+  <meta property="og:description" content="Shannon Corley is an executive coach and leadership advisor helping leaders navigate complexity and drive meaningful organizational performance."/>
+  <meta property="og:url" content="https://www.cortexlp.com/about.html"/>
+  <meta property="og:type" content="website"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKS8T9G406"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EKS8T9G406');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --navy:#0F2747;--navy-deep:#0a1d35;
+      --bordeaux:#4A0F1E;--bordeaux-light:#6b1a2c;
+      --black:#0B0B0B;--off-white:#F5F5F3;--soft-white:#FAFAF8;
+      --light-gray:#E6E6E4;--warm-gray:#DAD7D2;--text-gray:#6b6b68;
+      --serif:'Playfair Display',serif;--sans:'Montserrat',sans-serif;--ui:'Inter',sans-serif;
+    }
+    html{scroll-behavior:smooth;}
+    body{background:var(--off-white);color:var(--black);font-family:var(--sans);line-height:1.6;overflow-x:hidden;}
 
-    :root {
-      --navy: #0F2747;
-      --bordeaux: #4A0F1E;
-      --black: #0B0B0B;
-      --off-white: #F5F5F3;
-      --soft-white: #FAFAF8;
-      --light-gray: #E6E6E4;
-      --warm-gray: #DAD7D2;
-      --text-gray: #666666;
-      --serif: 'Playfair Display', serif;
-      --sans: 'Montserrat', sans-serif;
-      --mono: 'Inter', sans-serif;
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 3rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,245,243,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--light-gray);}
+    .nav-logo img{height:52px;width:auto;display:block;}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
+    .nav-links a{font-family:var(--ui);font-size:0.82rem;font-weight:400;letter-spacing:0.05em;color:var(--text-gray);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--navy);}
+    .nav-links a.active{color:var(--navy);font-weight:500;}
+    .nav-cta{font-family:var(--ui);font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);text-decoration:none;border:1px solid var(--navy);padding:0.55rem 1.4rem;transition:all 0.25s;}
+    .nav-cta:hover{background:var(--bordeaux);border-color:var(--bordeaux);color:var(--off-white);}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:200;}
+    .hamburger span{display:block;height:1.5px;width:28px;background:var(--navy);transition:all 0.3s;transform-origin:center;}
+    .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .mobile-menu{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;position:fixed;inset:0;background:var(--navy-deep);z-index:150;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+    .mobile-menu.open{opacity:1;pointer-events:all;}
+    .mobile-menu a{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.2rem);color:var(--off-white);text-decoration:none;transition:color 0.2s;}
+    .mobile-menu a:hover,.mobile-menu a.active{color:var(--bordeaux);}
+    .mobile-menu .mobile-cta{font-family:var(--ui);font-size:0.9rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:1px solid var(--bordeaux);padding:0.8rem 2.5rem;color:var(--off-white)!important;margin-top:1rem;}
+
+    /* PAGE HEADER — SPLIT */
+    .page-header{
+      min-height:55vh;display:grid;grid-template-columns:1fr 1fr;
+      padding-top:72px;
+    }
+    .header-text{
+      background:var(--navy);
+      padding:6rem 4rem;display:flex;flex-direction:column;justify-content:center;
+    }
+    .header-visual{position:relative;overflow:hidden;}
+    .header-visual img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(10%);}
+    .header-visual::before{
+      content:'';position:absolute;inset:0;z-index:1;
+      background:linear-gradient(to right,var(--navy) 0%,transparent 40%);
     }
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--off-white);
-      color: var(--black);
-      font-family: var(--sans);
-      font-weight: 400;
-      line-height: 1.6;
+    .eyebrow{
+      font-family:var(--ui);font-size:0.7rem;font-weight:500;
+      letter-spacing:0.25em;text-transform:uppercase;color:var(--bordeaux);
+      margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;
     }
+    .eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--bordeaux);}
+    h1{font-family:var(--serif);font-size:clamp(2.8rem,5vw,5rem);line-height:1.08;font-weight:400;color:var(--off-white);margin-bottom:1.5rem;}
+    h1 em{color:var(--bordeaux);font-style:italic;}
+    .header-lead{font-family:var(--ui);font-size:1rem;line-height:1.8;color:rgba(245,245,243,0.7);max-width:420px;}
 
-    /* ─── NAV ─── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.2rem 2.5rem;
-      background: var(--off-white);
-      border-bottom: 1px solid var(--light-gray);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: all 0.3s;
-    }
+    /* SECTIONS */
+    .section{padding:7rem 3rem;max-width:1280px;margin:0 auto;}
+    .section-label{font-family:var(--ui);font-size:0.7rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--bordeaux);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.75rem;}
+    .section-label::before{content:'';display:block;width:24px;height:1px;background:var(--bordeaux);}
+    h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);line-height:1.15;font-weight:400;color:var(--black);margin-bottom:1.5rem;}
+    h2 em{color:var(--bordeaux);font-style:italic;}
+    p.lead{font-family:var(--ui);font-size:1rem;line-height:1.85;color:var(--text-gray);max-width:600px;}
 
-    nav.scrolled {
-      background: rgba(245,245,243,0.95);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-    }
+    /* BIO GRID */
+    .bio-grid{display:grid;grid-template-columns:3fr 2fr;gap:6rem;align-items:start;margin-top:3rem;}
+    .bio-body p{font-family:var(--ui);font-size:0.95rem;line-height:1.85;color:var(--text-gray);max-width:600px;margin-bottom:1.25rem;}
+    .bio-aside{}
+    .bio-stat{border-top:1px solid var(--light-gray);padding:1.5rem 0;}
+    .bio-stat:last-child{border-bottom:1px solid var(--light-gray);}
+    .bio-stat-label{font-family:var(--ui);font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--bordeaux);margin-bottom:0.4rem;}
+    .bio-stat-value{font-family:var(--serif);font-size:1.1rem;color:var(--black);}
 
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-    }
+    /* CREDENTIALS */
+    .credentials-full{background:var(--soft-white);border:1px solid var(--light-gray);}
+    .credentials-full .section{padding:6rem 3rem;}
+    .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--light-gray);margin-top:4rem;}
+    .cred-grid .cred-card:nth-child(4),.cred-grid .cred-card:nth-child(5),.cred-grid .cred-card:nth-child(6){border-top:none!important;}
+    .cred-card{padding:3rem 2.5rem;border-right:1px solid var(--light-gray);position:relative;}
+    .cred-card:nth-child(3),.cred-card:nth-child(6){border-right:none;}
+    .cred-num{font-family:var(--serif);font-size:2.5rem;font-weight:400;color:var(--light-gray);line-height:1;margin-bottom:1.5rem;}
+    .cred-tag{font-family:var(--ui);font-size:0.68rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--bordeaux);margin-bottom:0.75rem;}
+    .cred-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--black);margin-bottom:1rem;}
+    .cred-card p{font-family:var(--ui);font-size:0.9rem;line-height:1.75;color:var(--text-gray);}
 
-    .nav-logo-img {
-      height: 80px;
-      width: auto;
-    }
+    /* PHILOSOPHY BLOCK */
+    .philosophy-block{background:var(--navy);padding:8rem 3rem;position:relative;overflow:hidden;}
+    .philosophy-block::before{content:'';position:absolute;top:-4rem;right:-4rem;width:400px;height:400px;border:1px solid rgba(245,245,243,0.06);border-radius:50%;}
+    .philosophy-block::after{content:'';position:absolute;top:-2rem;right:-2rem;width:250px;height:250px;border:1px solid rgba(245,245,243,0.06);border-radius:50%;}
+    .philosophy-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:center;position:relative;z-index:1;}
+    .philosophy-left .eyebrow{color:var(--bordeaux);}
+    .philosophy-left h2{color:var(--off-white);}
+    .philosophy-quotes{}
+    .phil-quote{padding:2.5rem 0;border-bottom:1px solid rgba(245,245,243,0.1);}
+    .phil-quote:first-child{padding-top:0;}
+    .phil-quote:last-child{border-bottom:none;}
+    .phil-quote p{font-family:var(--serif);font-size:1.15rem;font-style:italic;line-height:1.7;color:rgba(245,245,243,0.85);}
 
+    /* CTA STRIP */
+    .cta-strip{background:var(--black);padding:7rem 3rem;text-align:center;position:relative;overflow:hidden;}
+    .cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 50%,rgba(74,15,30,0.3) 0%,transparent 70%);}
+    .cta-strip h2{color:var(--off-white);position:relative;z-index:1;max-width:600px;margin:0 auto 1.5rem;}
+    .cta-strip .actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;margin-top:2.5rem;}
+    .btn-primary{font-family:var(--ui);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;background:var(--bordeaux);color:var(--off-white);padding:0.9rem 2.2rem;text-decoration:none;transition:background 0.25s,transform 0.2s;display:inline-block;}
+    .btn-primary:hover{background:var(--bordeaux-light);transform:translateY(-1px);}
+    .btn-ghost{font-family:var(--ui);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(245,245,243,0.3);color:var(--off-white);padding:0.9rem 2.2rem;text-decoration:none;transition:all 0.25s;display:inline-block;}
+    .btn-ghost:hover{border-color:rgba(245,245,243,0.7);}
 
+    /* FOOTER */
+    footer{background:var(--navy-deep);color:var(--off-white);padding:4rem 3rem 3rem;}
+    .footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(245,245,243,0.1);}
+    .footer-brand .footer-logo{height:44px;width:auto;filter:invert(1);margin-bottom:1.5rem;display:block;}
+    .footer-brand p{font-family:var(--ui);font-size:0.88rem;line-height:1.75;color:rgba(245,245,243,0.5);max-width:320px;}
+    .footer-col h4{font-family:var(--ui);font-size:0.7rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(245,245,243,0.4);margin-bottom:1.5rem;}
+    .footer-col ul{list-style:none;}
+    .footer-col ul li{margin-bottom:0.85rem;}
+    .footer-col ul a{font-family:var(--ui);font-size:0.88rem;color:rgba(245,245,243,0.65);text-decoration:none;transition:color 0.2s;}
+    .footer-col ul a:hover{color:var(--off-white);}
+    .footer-bottom{max-width:1280px;margin:2rem auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .footer-bottom p{font-family:var(--ui);font-size:0.8rem;color:rgba(245,245,243,0.35);}
+    .footer-bottom a{color:rgba(245,245,243,0.35);text-decoration:none;transition:color 0.2s;}
+    .footer-bottom a:hover{color:var(--off-white);}
 
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-      align-items: center;
-    }
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
 
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--text-gray);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--navy); }
-
-    .nav-links a.active {
-      color: var(--navy);
-      font-weight: 500;
-    }
-
-    .nav-cta {
-      background: var(--navy);
-      color: var(--off-white) !important;
-      padding: 0.65rem 1.6rem;
-      border-radius: 3px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: background 0.2s;
-      text-decoration: none;
-    }
-
-    .nav-cta:hover { background: var(--bordeaux); }
-
-    /* ─── HEADER ─── */
-    .page-header {
-      min-height: 50vh;
-      padding: 8rem 2.5rem 6rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--off-white) 0%, var(--soft-white) 100%);
-      border-bottom: 1px solid var(--light-gray);
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--navy);
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .section-label::before { content: '◆'; font-size: 0.5rem; }
-
-    h1 {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      color: var(--black);
-      max-width: 700px;
-    }
-
-    h1 em {
-      color: var(--bordeaux);
-      font-style: italic;
-    }
-
-    .page-header p {
-      font-size: 1.1rem;
-      color: var(--text-gray);
-      max-width: 600px;
-      line-height: 1.8;
-    }
-
-    /* ─── CONTENT ─── */
-    section {
-      padding: 6rem 2.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.2;
-      margin-bottom: 2rem;
-      color: var(--black);
-    }
-
-    h2 em { color: var(--bordeaux); font-style: italic; }
-
-    h3 {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      color: var(--black);
-      margin-bottom: 1rem;
-      margin-top: 2rem;
-    }
-
-    p {
-      color: var(--text-gray);
-      line-height: 1.8;
-      margin-bottom: 1rem;
-      max-width: 700px;
-    }
-
-    .bio-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-      margin: 3rem 0;
-    }
-
-    .bio-text h3 { margin-top: 0; }
-
-    .bio-visual {
-      aspect-ratio: 3/4;
-      border-radius: 4px;
-      border: 1px solid var(--light-gray);
-      overflow: hidden;
-    }
-
-    .bio-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    .credentials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .credential-card {
-      background: var(--soft-white);
-      padding: 2rem;
-      border-radius: 4px;
-      border-left: 4px solid var(--navy);
-    }
-
-    .credential-card h4 {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      color: var(--black);
-      margin-bottom: 0.5rem;
-    }
-
-    .credential-card .label {
-      font-size: 0.85rem;
-      color: var(--navy);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
-    }
-
-    .credential-card p {
-      font-size: 0.95rem;
-      margin-bottom: 0;
-    }
-
-    .philosophy {
-      background: var(--navy);
-      color: var(--off-white);
-      padding: 3rem 2.5rem;
-      border-radius: 0;
-      margin: 0 0 0 0;
-      max-width: none;
-    }
-
-    .philosophy h3 { color: var(--off-white); margin-top: 0; }
-
-    .philosophy p { color: rgba(245,245,243,0.9); max-width: none; }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--black);
-      color: var(--off-white);
-      padding: 3rem 2.5rem;
-      text-align: center;
-      border-top: 1px solid var(--navy);
-      margin-top: 4rem;
-    }
-
-    footer p {
-      color: var(--off-white);
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--off-white);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--bordeaux); }
-
-    /* ─── RESPONSIVE ─── */
-    /* ─── HAMBURGER ─── */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 36px;
-      height: 36px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      z-index: 200;
-    }
-
-    .hamburger span {
-      display: block;
-      height: 2px;
-      background: var(--navy);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-      transform-origin: center;
-    }
-
-    .hamburger.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-
-    .hamburger.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    .mobile-menu {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: var(--off-white);
-      z-index: 150;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-    }
-
-    .mobile-menu.open {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .mobile-menu a {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 6vw, 2.5rem);
-      color: var(--black);
-      text-decoration: none;
-      font-weight: 400;
-      transition: color 0.2s;
-    }
-
-    .mobile-menu a:hover,
-    .mobile-menu a.active { color: var(--bordeaux); }
-
-    .mobile-menu .mobile-cta {
-      margin-top: 1rem;
-      background: var(--navy);
-      color: var(--off-white) !important;
-      padding: 0.85rem 2.5rem;
-      border-radius: 3px;
-      font-family: var(--sans);
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .mobile-menu .mobile-cta:hover { background: var(--bordeaux); }
-
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .hamburger { display: flex; }
-      .nav-links { display: none; }
-      .nav-cta { display: none; }
-      section { padding: 4rem 1.5rem; }
-      .page-header { padding: 6rem 1.5rem 4rem; }
-      h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
-      .bio-section { grid-template-columns: 1fr; }
-      .credentials { grid-template-columns: 1fr; }
-      .philosophy { padding: 3rem 1.5rem; }
+    @media(max-width:900px){
+      nav{padding:0 1.5rem;}
+      .hamburger{display:flex;}
+      .nav-links,.nav-cta{display:none;}
+      .page-header{grid-template-columns:1fr;}
+      .header-text{padding:5rem 1.5rem 3rem;}
+      .header-visual{display:none;}
+      .section{padding:5rem 1.5rem;}
+      .bio-grid{grid-template-columns:1fr;gap:3rem;}
+      .cred-grid{grid-template-columns:1fr;}
+      .cred-card{border-right:none;border-bottom:1px solid var(--light-gray);}
+      .cred-card:last-child{border-bottom:none;}
+      .philosophy-inner{grid-template-columns:1fr;gap:3rem;}
+      .philosophy-block{padding:6rem 1.5rem;}
+      .cta-strip{padding:6rem 1.5rem;}
+      .footer-inner{grid-template-columns:1fr;gap:3rem;}
+      .footer-bottom{flex-direction:column;align-items:flex-start;}
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav id="nav">
-    <a href="/" class="nav-logo">
-      <img src="logo black.png" alt="CORTEX" class="nav-logo-img" />
-      
-    </a>
+    <a href="/" class="nav-logo"><img src="logo black.png" alt="CORTEX"/></a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/about.html" class="active">About</a></li>
-      <li><a href="/leadership-performance.html">Leadership & Performance</a></li>
+      <li><a href="/leadership-performance.html">Leadership &amp; Performance</a></li>
       <li><a href="/coaching.html">Coaching</a></li>
       <li><a href="/speaking.html">Speaking</a></li>
     </ul>
     <a href="/contact.html" class="nav-cta">Get In Touch</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="/">Home</a>
-    <a href="/about.html">About</a>
+    <a href="/about.html" class="active">About</a>
     <a href="/leadership-performance.html">Leadership &amp; Performance</a>
     <a href="/coaching.html">Coaching</a>
     <a href="/speaking.html">Speaking</a>
     <a href="/contact.html" class="mobile-cta">Get In Touch</a>
   </div>
 
-  <!-- HEADER -->
-  <section class="page-header">
-    <div class="section-label">About Shannon</div>
-    <h1>Leadership Through <em>Complexity</em></h1>
-    <p>With deep experience in technology, organizational development, and human behavior, Shannon brings strategic insight to leadership challenges. Driven by curiosity and a commitment to meaningful impact.</p>
-  </section>
+  <!-- SPLIT HEADER -->
+  <div class="page-header">
+    <div class="header-text">
+      <div class="eyebrow">About Shannon</div>
+      <h1>Leadership Through <em>Complexity</em></h1>
+      <p class="header-lead">Neuroscientist. Sales leader. Certified coach. 17+ years driving performance in healthcare and biotech — now helping leaders do the same.</p>
+    </div>
+    <div class="header-visual">
+      <img src="Shannon.jpg" alt="Shannon Corley"/>
+    </div>
+  </div>
 
-  <!-- BIO SECTION -->
-  <section>
-    <div class="bio-section">
-      <div class="bio-text">
-        <h3>Professional Background</h3>
-        <p>Shannon is a leadership advisor and executive coach with a track record of working with leaders navigating organizational complexity and driving performance transformation. With roots in technology and organizational development, Shannon brings both analytical rigor and human-centered perspective to leadership challenges.</p>
-        <p>Her approach is grounded in understanding what drives human performance, how organizations evolve, and the role of leadership in shaping meaningful outcomes.</p>
+  <!-- BIO -->
+  <div class="section reveal">
+    <div class="section-label">Professional Background</div>
+    <div class="bio-grid">
+      <div class="bio-body">
+        <p>Shannon Corley is a sales and business leader with 17+ years of experience in healthcare and biotechnology — and a certified professional coach who has spent her career at the intersection of science, technology, and human performance. Her path is anything but linear: from neuroscience research labs at McGill and the University of Calgary, to guiding dives across Malaysia, Thailand, Egypt, and Mexico, to building high-performing sales organizations across Western Canada.</p>
+        <p>At Dentsply Sirona, Shannon led regional teams through complex technology adoption challenges — driving 433% growth over four years as Sales Manager of the year in 2019 and 2020. That track record wasn't built on pushing product. It was built on understanding people: what motivates them, what slows them down, and what conditions allow them to do their best work.</p>
+        <p>Her coaching practice is the natural extension of that career. Shannon brings an MSc in Neuroscience, an MBA in Technology Management from SFU, and certification from Erickson Coaching International. She works with leaders who are navigating real complexity — and who want to grow not just in results, but in how they show up for the people in their charge.</p>
       </div>
-      <div class="bio-visual">
-        <img src="Shannon.jpg" alt="Shannon Corley">
+      <div class="bio-aside">
+        <div class="bio-stat">
+          <div class="bio-stat-label">Coaching Credential</div>
+          <div class="bio-stat-value">Certified Professional Coach · Erickson International</div>
+        </div>
+        <div class="bio-stat">
+          <div class="bio-stat-label">Graduate Education</div>
+          <div class="bio-stat-value">MBA Technology Management · SFU<br/>MSc Neuroscience · U of Calgary</div>
+        </div>
+        <div class="bio-stat">
+          <div class="bio-stat-label">Industry Background</div>
+          <div class="bio-stat-value">17+ years · Healthcare &amp; Biotechnology</div>
+        </div>
+        <div class="bio-stat">
+          <div class="bio-stat-label">Contact</div>
+          <div class="bio-stat-value">shannon@cortexlp.com</div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- CREDENTIALS -->
-  <section>
-    <h2>Background & <em>Credentials</em></h2>
-    <div class="credentials">
-      <div class="credential-card">
-        <div class="label">Education</div>
-        <h4>MBA</h4>
-        <p>Advanced work in organizational development, strategic management, and human performance systems.</p>
-      </div>
-      <div class="credential-card">
-        <div class="label">Research & Study</div>
-        <h4>Neuroscience & Behavior</h4>
-        <p>Deep interest in how the brain works, decision-making processes, and human behavior under complexity.</p>
-      </div>
-      <div class="credential-card">
-        <div class="label">Experience</div>
-        <h4>Technology & Leadership</h4>
-        <p>Years of experience in fast-moving tech environments, building teams, and driving organizational growth.</p>
+  <div class="credentials-full reveal">
+    <div class="section">
+      <div class="section-label">Background &amp; Credentials</div>
+      <h2>Depth of <em>Experience</em></h2>
+      <div class="cred-grid">
+        <div class="cred-card">
+          <div class="cred-num">01</div>
+          <div class="cred-tag">Coaching</div>
+          <h3>Certified Professional Coach</h3>
+          <p>Erickson Coaching International — one of the world's leading ICF-accredited coach training programs. This is what backs every coaching engagement Shannon delivers.</p>
+        </div>
+        <div class="cred-card">
+          <div class="cred-num">02</div>
+          <div class="cred-tag">Graduate Studies</div>
+          <h3>MBA · Technology Management</h3>
+          <p>Simon Fraser University. Graduate study in technology strategy, organizational behavior, and the commercial mechanics of complex, fast-moving industries.</p>
+        </div>
+        <div class="cred-card">
+          <div class="cred-num">03</div>
+          <div class="cred-tag">Graduate Studies</div>
+          <h3>MSc · Neuroscience</h3>
+          <p>University of Calgary, Faculty of Medicine. Research focus on neural cell survival, growth factors, and brain behavior — the science underneath everything Shannon teaches about human performance.</p>
+        </div>
+        <div class="cred-card" style="border-top:1px solid var(--light-gray);">
+          <div class="cred-num">04</div>
+          <div class="cred-tag">Undergraduate</div>
+          <h3>BSc · Biopsychology</h3>
+          <p>University of Victoria. The foundation — where the fascination with human behavior, the brain, and what makes people tick began.</p>
+        </div>
+        <div class="cred-card" style="border-top:1px solid var(--light-gray);">
+          <div class="cred-num">05</div>
+          <div class="cred-tag">Industry Experience</div>
+          <h3>17+ Years · Healthcare &amp; Biotech</h3>
+          <p>Regional Business Manager at Dentsply Sirona (8+ years), Territory Manager at ESBE Scientific (9 years). 433% revenue growth. Sales Manager of the Year 2019 &amp; 2020. Built and led teams across British Columbia and Western Canada.</p>
+        </div>
+        <div class="cred-card" style="border-top:1px solid var(--light-gray);">
+          <div class="cred-num">06</div>
+          <div class="cred-tag">Research Background</div>
+          <h3>Research Associate · McGill &amp; U of Calgary</h3>
+          <p>Faculty of Medicine research at two universities. Investigated measles virus behavior (McGill) and oligodendrocyte survival mechanisms (Calgary). Rigorous scientific training that still shapes how Shannon approaches problems.</p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- PHILOSOPHY -->
-  <section class="philosophy">
-    <h3>Leadership Philosophy</h3>
-    <p>Great leadership isn't about having all the answers. It's about creating the conditions where people can think clearly, act decisively, and contribute meaningfully. Leadership is about taking care of those in your charge.</p>
-    <p>The best leaders understand themselves — their patterns, their triggers, their impact on others. They're curious about human behavior. They recognize that sustainable performance comes from clarity of purpose, psychological safety, and genuine investment in people.</p>
-  </section>
+  <div class="philosophy-block reveal">
+    <div class="philosophy-inner">
+      <div class="philosophy-left">
+        <div class="eyebrow" style="color:var(--bordeaux)">Philosophy</div>
+        <h2 style="color:var(--off-white)">What I <em>Believe</em></h2>
+      </div>
+      <div class="philosophy-quotes">
+        <div class="phil-quote">
+          <p>"I spent years studying the brain, then years inside fast-moving organizations watching how people perform under pressure. The science and the lived experience point to the same thing: performance is a conditions problem before it's a people problem."</p>
+        </div>
+        <div class="phil-quote">
+          <p>"The best leaders I've worked with don't have more answers than everyone else. They ask better questions. They create space for people to think clearly, take risks, and bring their best. That's the work."</p>
+        </div>
+        <div class="phil-quote">
+          <p>"Leadership is about taking care of the people in your charge. Everything else — results, growth, strategy — follows from getting that right."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-strip reveal">
+    <h2>Ready to Work Together?</h2>
+    <div class="actions">
+      <a href="/coaching.html" class="btn-primary">Explore Coaching</a>
+      <a href="/contact.html" class="btn-ghost">Get In Touch</a>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 CORTEX · Leadership & Performance</p>
-    <p style="font-size: 0.85rem; color: rgba(245,245,243,0.7); margin-top: 1rem;">Shannon Corley</p>
-    <div class="footer-links">
-      <a href="/about.html">About</a>
-      <a href="/leadership-performance.html">Insights</a>
-      <a href="/coaching.html">Coaching</a>
-      <a href="/speaking.html">Speaking</a>
-      <a href="/contact.html">Contact</a>
-      <a href="https://www.linkedin.com/in/shannon-corley-msc-mba/" target="_blank" rel="noopener">LinkedIn</a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo black.png" alt="CORTEX" class="footer-logo"/>
+        <p>Executive coaching and leadership performance insights for leaders navigating complexity and driving meaningful organizational impact.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/leadership-performance.html">Insights</a></li>
+          <li><a href="/coaching.html">Coaching</a></li>
+          <li><a href="/speaking.html">Speaking</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/shannon-corley-msc-mba/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:shannon@cortexlp.com">shannon@cortexlp.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 CORTEX · Leadership &amp; Performance · Shannon Corley</p>
+      <a href="https://stackwell.digital">Website by Stackwell.Digital</a>
     </div>
   </footer>
 
   <script>
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      if (link.pathname === window.location.pathname) {
-        link.classList.add('active');
-      }
-    });
-
-    // Hamburger menu
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
+    const hamburger=document.getElementById('hamburger');
+    const mobileMenu=document.getElementById('mobileMenu');
+    hamburger.addEventListener('click',()=>{
       hamburger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':'';
     });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // Set active link in mobile menu
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      if (link.pathname === window.location.pathname) {
-        link.classList.add('active');
-      }
-    });
+    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      hamburger.classList.remove('open');mobileMenu.classList.remove('open');document.body.style.overflow='';
+    }));
+    const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   </script>
 </body>
 </html>

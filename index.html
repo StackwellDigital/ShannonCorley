@@ -1,532 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CORTEX · Leadership & Performance</title>
-  <meta name="description" content="Insights and coaching for leaders navigating complexity and driving meaningful impact." />
-  <link rel="canonical" href="https://www.cortexlp.com/" />
-  <meta property="og:title" content="CORTEX · Leadership & Performance" />
-  <meta property="og:description" content="Insights and coaching for leaders navigating complexity and driving meaningful impact." />
-  <meta property="og:url" content="https://www.cortexlp.com/" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKS8T9G406"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EKS8T9G406');
-</script>
+  <meta name="description" content="CORTEX — executive coaching and leadership performance insights for leaders navigating complexity and driving meaningful organizational impact."/>
+  <link rel="canonical" href="https://www.cortexlp.com/"/>
+  <meta property="og:title" content="CORTEX · Leadership & Performance"/>
+  <meta property="og:description" content="Executive coaching and leadership performance insights for leaders navigating complexity and driving meaningful organizational impact."/>
+  <meta property="og:url" content="https://www.cortexlp.com/"/>
+  <meta property="og:type" content="website"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKS8T9G406"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EKS8T9G406');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --navy:#0F2747;
+      --navy-deep:#0a1d35;
+      --bordeaux:#4A0F1E;
+      --bordeaux-light:#6b1a2c;
+      --black:#0B0B0B;
+      --off-white:#F5F5F3;
+      --soft-white:#FAFAF8;
+      --light-gray:#E6E6E4;
+      --warm-gray:#DAD7D2;
+      --text-gray:#6b6b68;
+      --serif:'Playfair Display',serif;
+      --sans:'Montserrat',sans-serif;
+      --ui:'Inter',sans-serif;
+    }
+    html{scroll-behavior:smooth;}
+    body{background:var(--off-white);color:var(--black);font-family:var(--sans);font-weight:400;line-height:1.6;overflow-x:hidden;}
 
-    :root {
-      --navy: #0F2747;
-      --bordeaux: #4A0F1E;
-      --black: #0B0B0B;
-      --off-white: #F5F5F3;
-      --soft-white: #FAFAF8;
-      --light-gray: #E6E6E4;
-      --warm-gray: #DAD7D2;
-      --text-gray: #666666;
-      --serif: 'Playfair Display', serif;
-      --sans: 'Montserrat', sans-serif;
-      --mono: 'Inter', sans-serif;
+    /* NAV */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      padding:0 3rem;height:72px;
+      display:flex;align-items:center;justify-content:space-between;
+      background:transparent;
+      transition:background 0.4s,border-color 0.4s;
+    }
+    nav.scrolled{background:rgba(245,245,243,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--light-gray);}
+    nav.dark-mode{color:var(--off-white);}
+    .nav-logo img{height:52px;width:auto;display:block;transition:filter 0.3s;}
+    nav.dark-mode .nav-logo img{filter:invert(1);}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center;}
+    .nav-links a{font-family:var(--ui);font-size:0.82rem;font-weight:400;letter-spacing:0.05em;color:var(--off-white);text-decoration:none;transition:opacity 0.2s;}
+    nav.scrolled .nav-links a{color:var(--text-gray);}
+    .nav-links a:hover{opacity:0.6;}
+    .nav-links a.active{opacity:1;font-weight:500;}
+    nav.scrolled .nav-links a.active{color:var(--navy);}
+    .nav-cta{
+      font-family:var(--ui);font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
+      color:var(--off-white);text-decoration:none;
+      border:1px solid rgba(245,245,243,0.4);
+      padding:0.55rem 1.4rem;
+      transition:all 0.25s;
+    }
+    nav.scrolled .nav-cta{color:var(--navy);border-color:var(--navy);}
+    .nav-cta:hover{background:var(--bordeaux);border-color:var(--bordeaux);color:var(--off-white)!important;}
+
+    /* HAMBURGER */
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:200;}
+    .hamburger span{display:block;height:1.5px;width:28px;background:var(--off-white);transition:all 0.3s;transform-origin:center;}
+    nav.scrolled .hamburger span{background:var(--navy);}
+    .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .mobile-menu{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+      position:fixed;inset:0;background:var(--navy-deep);z-index:150;
+      opacity:0;pointer-events:none;transition:opacity 0.3s;
+    }
+    .mobile-menu.open{opacity:1;pointer-events:all;}
+    .mobile-menu a{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.2rem);color:var(--off-white);text-decoration:none;transition:color 0.2s;}
+    .mobile-menu a:hover,.mobile-menu a.active{color:var(--bordeaux);}
+    .mobile-menu .mobile-cta{font-family:var(--ui);font-size:0.9rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:1px solid var(--bordeaux);padding:0.8rem 2.5rem;color:var(--off-white)!important;margin-top:1rem;}
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      background:var(--navy-deep);
+      display:grid;grid-template-columns:1fr 1fr;
+      position:relative;overflow:hidden;
+    }
+    .hero::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 60% 80% at 70% 50%,rgba(74,15,30,0.35) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .hero-content{
+      display:flex;flex-direction:column;justify-content:center;
+      padding:10rem 4rem 6rem 3rem;
+      position:relative;z-index:2;
+    }
+    .hero-eyebrow{
+      font-family:var(--ui);font-size:0.72rem;font-weight:500;
+      letter-spacing:0.25em;text-transform:uppercase;
+      color:var(--bordeaux);margin-bottom:2rem;
+      display:flex;align-items:center;gap:0.75rem;
+    }
+    .hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--bordeaux);}
+    .hero h1{
+      font-family:var(--serif);
+      font-size:clamp(3.2rem,5.5vw,5.8rem);
+      line-height:1.05;font-weight:400;
+      color:var(--off-white);margin-bottom:2rem;
+    }
+    .hero h1 em{color:var(--bordeaux);font-style:italic;}
+    .hero-sub{
+      font-family:var(--ui);font-size:1rem;font-weight:300;
+      line-height:1.8;color:rgba(245,245,243,0.7);
+      max-width:440px;margin-bottom:3rem;
+    }
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+    .btn-primary{
+      font-family:var(--ui);font-size:0.82rem;font-weight:500;
+      letter-spacing:0.1em;text-transform:uppercase;
+      background:var(--bordeaux);color:var(--off-white);
+      padding:0.9rem 2.2rem;text-decoration:none;
+      transition:background 0.25s,transform 0.2s;display:inline-block;
+    }
+    .btn-primary:hover{background:var(--bordeaux-light);transform:translateY(-1px);}
+    .btn-ghost{
+      font-family:var(--ui);font-size:0.82rem;font-weight:500;
+      letter-spacing:0.1em;text-transform:uppercase;
+      border:1px solid rgba(245,245,243,0.3);color:var(--off-white);
+      padding:0.9rem 2.2rem;text-decoration:none;
+      transition:border-color 0.25s,background 0.25s;display:inline-block;
+    }
+    .btn-ghost:hover{border-color:rgba(245,245,243,0.7);background:rgba(245,245,243,0.05);}
+    .hero-image{
+      position:relative;overflow:hidden;
+    }
+    .hero-image img{
+      width:100%;height:100%;object-fit:cover;object-position:center top;
+      display:block;opacity:0.6;
+      filter:grayscale(20%);
+    }
+    .hero-image::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(to right,var(--navy-deep) 0%,transparent 40%);
+    }
+    .hero-scroll{
+      position:absolute;bottom:2.5rem;left:3rem;z-index:3;
+      font-family:var(--ui);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;
+      color:rgba(245,245,243,0.4);display:flex;align-items:center;gap:0.75rem;
+    }
+    .hero-scroll::after{content:'';display:block;width:40px;height:1px;background:rgba(245,245,243,0.3);}
+
+    /* MARQUEE STRIP */
+    .marquee-strip{
+      background:var(--bordeaux);
+      padding:0.75rem 0;overflow:hidden;
+      display:flex;align-items:center;
+    }
+    .marquee-inner{
+      display:flex;gap:3rem;animation:marquee 30s linear infinite;white-space:nowrap;
+    }
+    .marquee-inner span{
+      font-family:var(--ui);font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;
+      color:rgba(245,245,243,0.85);flex-shrink:0;
+    }
+    .marquee-inner span.dot{color:rgba(245,245,243,0.4);}
+    @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+    /* SECTIONS */
+    .section{padding:7rem 3rem;max-width:1280px;margin:0 auto;}
+    .section-sm{padding:5rem 3rem;max-width:1280px;margin:0 auto;}
+    .section-label{
+      font-family:var(--ui);font-size:0.7rem;font-weight:500;
+      letter-spacing:0.25em;text-transform:uppercase;
+      color:var(--bordeaux);margin-bottom:1.25rem;
+      display:flex;align-items:center;gap:0.75rem;
+    }
+    .section-label::before{content:'';display:block;width:24px;height:1px;background:var(--bordeaux);}
+    h2{
+      font-family:var(--serif);
+      font-size:clamp(2.2rem,4vw,3.8rem);
+      line-height:1.15;font-weight:400;
+      color:var(--black);margin-bottom:1.5rem;
+    }
+    h2 em{color:var(--bordeaux);font-style:italic;}
+    h2.light{color:var(--off-white);}
+    .lead{font-family:var(--ui);font-size:1rem;line-height:1.85;color:var(--text-gray);max-width:560px;}
+
+    /* ABOUT STRIP */
+    .about-strip{
+      display:grid;grid-template-columns:1fr 1fr;
+      background:var(--navy);min-height:50vh;
+      overflow:hidden;
+    }
+    .about-strip-text{
+      padding:6rem 4rem;display:flex;flex-direction:column;justify-content:center;
+    }
+    .about-strip-text .section-label::before{background:var(--bordeaux);}
+    .about-strip-text h2{color:var(--off-white);}
+    .about-strip-text .lead{color:rgba(245,245,243,0.72);}
+    .about-strip-text .btn-outline{
+      margin-top:2.5rem;
+      font-family:var(--ui);font-size:0.8rem;font-weight:500;
+      letter-spacing:0.1em;text-transform:uppercase;
+      border:1px solid rgba(245,245,243,0.3);color:var(--off-white);
+      padding:0.8rem 2rem;text-decoration:none;
+      display:inline-block;transition:all 0.25s;align-self:flex-start;
+    }
+    .about-strip-text .btn-outline:hover{border-color:var(--bordeaux);background:var(--bordeaux);}
+    .about-strip-visual{position:relative;overflow:hidden;min-height:400px;}
+    .about-strip-visual img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%);}
+    .about-strip-visual::before{
+      content:'';position:absolute;inset:0;z-index:1;
+      background:linear-gradient(to right,var(--navy) 0%,transparent 35%);
     }
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--off-white);
-      color: var(--black);
-      font-family: var(--sans);
-      font-weight: 400;
-      line-height: 1.6;
+    /* INSIGHT CARDS */
+    .insights-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+      border:1px solid var(--light-gray);margin-top:4rem;
     }
-
-    /* ─── NAV ─── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.2rem 2.5rem;
-      background: var(--off-white);
-      border-bottom: 1px solid var(--light-gray);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: all 0.3s;
+    .insight-card{
+      padding:3rem 2.5rem;border-right:1px solid var(--light-gray);
+      position:relative;transition:background 0.3s;
     }
-
-    nav.scrolled {
-      background: rgba(245,245,243,0.95);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    .insight-card:last-child{border-right:none;}
+    .insight-card:hover{background:var(--soft-white);}
+    .insight-num{
+      font-family:var(--serif);font-size:3rem;font-weight:400;
+      color:var(--light-gray);line-height:1;margin-bottom:1.5rem;
+      transition:color 0.3s;
     }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
+    .insight-card:hover .insight-num{color:var(--bordeaux);}
+    .insight-card h3{
+      font-family:var(--serif);font-size:1.4rem;font-weight:400;
+      color:var(--black);margin-bottom:1rem;line-height:1.3;
     }
-
-    .nav-logo-img {
-      height: 80px;
-      width: auto;
+    .insight-card p{
+      font-family:var(--ui);font-size:0.9rem;line-height:1.75;
+      color:var(--text-gray);margin-bottom:2rem;
     }
-
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-      align-items: center;
+    .insight-link{
+      font-family:var(--ui);font-size:0.75rem;font-weight:500;
+      letter-spacing:0.12em;text-transform:uppercase;
+      color:var(--navy);text-decoration:none;
+      display:inline-flex;align-items:center;gap:0.5rem;
+      transition:gap 0.2s,color 0.2s;
     }
+    .insight-link::after{content:'→';}
+    .insight-link:hover{gap:0.85rem;color:var(--bordeaux);}
 
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--text-gray);
-      text-decoration: none;
-      transition: color 0.2s;
-      position: relative;
+    /* SERVICES ROW */
+    .services-row{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:2px;background:var(--light-gray);
+      margin-top:4rem;
     }
-
-    .nav-links a:hover { color: var(--navy); }
-
-    .nav-links a.active {
-      color: var(--navy);
-      font-weight: 500;
+    .service-card{
+      background:var(--off-white);
+      padding:3.5rem 2.5rem;position:relative;overflow:hidden;
+      transition:background 0.3s;
     }
-
-    .nav-cta {
-      background: var(--navy);
-      color: var(--off-white) !important;
-      padding: 0.65rem 1.6rem;
-      border-radius: 3px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: background 0.2s;
+    .service-card:hover{background:var(--navy);}
+    .service-icon{
+      width:48px;height:48px;margin-bottom:2rem;
+      border:1px solid var(--light-gray);
+      display:flex;align-items:center;justify-content:center;
+      transition:border-color 0.3s,background 0.3s;
     }
-
-    .nav-cta:hover { background: var(--bordeaux); }
-
-    /* ─── HERO ─── */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 4rem;
-      padding: 8rem 2.5rem 6rem;
-      background: var(--off-white);
+    .service-card:hover .service-icon{border-color:var(--bordeaux);background:var(--bordeaux);}
+    .service-icon svg{width:22px;height:22px;stroke:var(--navy);transition:stroke 0.3s;}
+    .service-card:hover .service-icon svg{stroke:var(--off-white);}
+    .service-card h3{
+      font-family:var(--serif);font-size:1.5rem;font-weight:400;
+      color:var(--black);margin-bottom:1rem;transition:color 0.3s;
     }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+    .service-card:hover h3{color:var(--off-white);}
+    .service-card p{
+      font-family:var(--ui);font-size:0.9rem;line-height:1.75;
+      color:var(--text-gray);transition:color 0.3s;
     }
-
-    .hero-image {
-      height: 100%;
-      min-height: 600px;
-      position: relative;
+    .service-card:hover p{color:rgba(245,245,243,0.7);}
+    .service-card .card-link{
+      margin-top:2rem;display:inline-flex;align-items:center;gap:0.5rem;
+      font-family:var(--ui);font-size:0.75rem;font-weight:500;
+      letter-spacing:0.1em;text-transform:uppercase;
+      color:var(--navy);text-decoration:none;transition:gap 0.2s,color 0.3s;
     }
+    .service-card:hover .card-link{color:var(--bordeaux);gap:0.85rem;}
+    .service-card .card-link::after{content:'→';}
 
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 4px;
+    /* CTA BANNER */
+    .cta-banner{
+      background:var(--black);
+      padding:8rem 3rem;text-align:center;
+      position:relative;overflow:hidden;
     }
-
-    .hero-tag {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--navy);
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
+    .cta-banner::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 50% 60% at 50% 50%,rgba(74,15,30,0.3) 0%,transparent 70%);
     }
-
-    .hero-tag::before { content: '◆'; font-size: 0.5rem; }
-
-    h1 {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      color: var(--black);
-      max-width: 700px;
+    .cta-banner h2{color:var(--off-white);position:relative;z-index:1;margin:0 auto 1.5rem;max-width:700px;}
+    .cta-banner p{
+      font-family:var(--ui);font-size:1rem;line-height:1.8;
+      color:rgba(245,245,243,0.6);max-width:520px;margin:0 auto 3rem;
+      position:relative;z-index:1;
     }
+    .cta-banner .btn-primary{position:relative;z-index:1;}
 
-    h1 em {
-      color: var(--bordeaux);
-      font-style: italic;
+    /* FOOTER */
+    footer{
+      background:var(--navy-deep);
+      color:var(--off-white);
+      padding:4rem 3rem 3rem;
     }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      color: var(--text-gray);
-      max-width: 600px;
-      margin-bottom: 2.5rem;
-      line-height: 1.8;
+    .footer-inner{
+      max-width:1280px;margin:0 auto;
+      display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;
+      padding-bottom:3rem;border-bottom:1px solid rgba(245,245,243,0.1);
     }
-
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
+    .footer-brand .footer-logo{height:44px;width:auto;filter:invert(1);margin-bottom:1.5rem;display:block;}
+    .footer-brand p{
+      font-family:var(--ui);font-size:0.88rem;line-height:1.75;
+      color:rgba(245,245,243,0.5);max-width:320px;
     }
-
-    .btn {
-      padding: 0.9rem 2rem;
-      border-radius: 3px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-decoration: none;
-      border: 2px solid;
-      transition: all 0.3s;
-      cursor: pointer;
-      font-family: var(--sans);
+    .footer-col h4{
+      font-family:var(--ui);font-size:0.7rem;font-weight:500;
+      letter-spacing:0.2em;text-transform:uppercase;
+      color:rgba(245,245,243,0.4);margin-bottom:1.5rem;
     }
-
-    .btn-primary {
-      background: var(--navy);
-      color: var(--off-white);
-      border-color: var(--navy);
+    .footer-col ul{list-style:none;}
+    .footer-col ul li{margin-bottom:0.85rem;}
+    .footer-col ul a{
+      font-family:var(--ui);font-size:0.88rem;
+      color:rgba(245,245,243,0.65);text-decoration:none;
+      transition:color 0.2s;
     }
-
-    .btn-primary:hover {
-      background: var(--bordeaux);
-      border-color: var(--bordeaux);
+    .footer-col ul a:hover{color:var(--off-white);}
+    .footer-bottom{
+      max-width:1280px;margin:2rem auto 0;
+      display:flex;justify-content:space-between;align-items:center;
+      flex-wrap:wrap;gap:1rem;
     }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--navy);
-      border-color: var(--navy);
+    .footer-bottom p{
+      font-family:var(--ui);font-size:0.8rem;
+      color:rgba(245,245,243,0.35);
     }
+    .footer-bottom a{color:rgba(245,245,243,0.35);text-decoration:none;transition:color 0.2s;}
+    .footer-bottom a:hover{color:var(--off-white);}
+    .credit{font-size:0.78rem!important;}
 
-    .btn-secondary:hover {
-      background: var(--navy);
-      color: var(--off-white);
-    }
+    /* REVEAL ANIMATIONS */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
 
-    /* ─── SECTIONS ─── */
-    section {
-      padding: 6rem 2.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--navy);
-      font-weight: 600;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .section-label::before { content: '◆'; font-size: 0.5rem; }
-
-    h2 {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.2;
-      margin-bottom: 2rem;
-      color: var(--black);
-    }
-
-    h2 em { color: var(--bordeaux); font-style: italic; }
-
-    h3 {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      color: var(--black);
-      margin-bottom: 0.75rem;
-    }
-
-    p {
-      color: var(--text-gray);
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-
-    /* ─── FEATURED INSIGHTS ─── */
-    .insights-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .insight-card {
-      background: var(--soft-white);
-      padding: 2rem;
-      border-radius: 4px;
-      border-left: 4px solid var(--navy);
-      transition: all 0.3s;
-    }
-
-    .insight-card:hover {
-      border-left-color: var(--bordeaux);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
-
-    .insight-card h3 { margin-bottom: 0.75rem; }
-
-    .insight-card p { font-size: 0.95rem; margin-bottom: 1.25rem; }
-
-    .insight-link {
-      font-size: 0.9rem;
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: color 0.2s;
-    }
-
-    .insight-link:hover { color: var(--bordeaux); }
-
-    .insight-link::after { content: '→'; }
-
-    /* ─── CTA SECTION ─── */
-    .cta-section {
-      background: var(--navy);
-      color: var(--off-white);
-      padding: 4rem 2.5rem;
-      text-align: center;
-      border-radius: 4px;
-      margin: 4rem auto;
-      max-width: 700px;
-    }
-
-    .cta-section h2 {
-      color: var(--off-white);
-      margin-bottom: 1rem;
-    }
-
-    .cta-section p {
-      color: rgba(245,245,243,0.9);
-      margin-bottom: 2rem;
-    }
-
-    .cta-section .btn { margin: 0 0.5rem; }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--black);
-      color: var(--off-white);
-      padding: 3rem 2.5rem;
-      text-align: center;
-      border-top: 1px solid var(--navy);
-      margin-top: 4rem;
-    }
-
-    footer p {
-      color: var(--off-white);
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--off-white);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--bordeaux); }
-
-    /* ─── RESPONSIVE ─── */
-    /* ─── HAMBURGER ─── */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 36px;
-      height: 36px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      z-index: 200;
-    }
-
-    .hamburger span {
-      display: block;
-      height: 2px;
-      background: var(--navy);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-      transform-origin: center;
-    }
-
-    .hamburger.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-
-    .hamburger.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    .mobile-menu {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: var(--off-white);
-      z-index: 150;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-    }
-
-    .mobile-menu.open {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .mobile-menu a {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 6vw, 2.5rem);
-      color: var(--black);
-      text-decoration: none;
-      font-weight: 400;
-      transition: color 0.2s;
-    }
-
-    .mobile-menu a:hover,
-    .mobile-menu a.active { color: var(--bordeaux); }
-
-    .mobile-menu .mobile-cta {
-      margin-top: 1rem;
-      background: var(--navy);
-      color: var(--off-white) !important;
-      padding: 0.85rem 2.5rem;
-      border-radius: 3px;
-      font-family: var(--sans);
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .mobile-menu .mobile-cta:hover { background: var(--bordeaux); }
-
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .hamburger { display: flex; }
-      .nav-links { display: none; }
-      .nav-cta { display: none; }
-      section { padding: 4rem 1.5rem; }
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 0;
-        gap: 0;
-        min-height: 100vh;
-        position: relative;
-      }
-      .hero-image {
-        position: absolute;
-        inset: 0;
-        min-height: 100vh;
-        order: 0;
-        z-index: 0;
-      }
-      .hero-image::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, rgba(11,11,11,0.35) 0%, rgba(11,11,11,0.65) 100%);
-      }
-      .hero-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 0;
-      }
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        padding: 7rem 1.5rem 4rem;
-        align-self: flex-end;
-        min-height: 100vh;
-        justify-content: flex-end;
-        display: flex;
-        flex-direction: column;
-      }
-      .hero-tag { color: rgba(245,245,243,0.8); }
-      .hero-tag::before { color: rgba(245,245,243,0.8); }
-      .hero-content h1 { color: var(--off-white); }
-      .hero-sub { color: rgba(245,245,243,0.85); }
-      .btn-secondary {
-        border-color: var(--off-white);
-        color: var(--off-white);
-      }
-      .btn-secondary:hover {
-        background: var(--off-white);
-        color: var(--navy);
-      }
-      h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
-      .insights-grid { grid-template-columns: 1fr; }
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      nav{padding:0 1.5rem;}
+      .hamburger{display:flex;}
+      .nav-links,.nav-cta{display:none;}
+      .hero{grid-template-columns:1fr;min-height:auto;}
+      .hero-content{padding:8rem 1.5rem 4rem;}
+      .hero-image{display:none;}
+      .about-strip{grid-template-columns:1fr;}
+      .about-strip-visual{min-height:300px;}
+      .insights-grid{grid-template-columns:1fr;}
+      .insight-card{border-right:none;border-bottom:1px solid var(--light-gray);}
+      .services-row{grid-template-columns:1fr;}
+      .footer-inner{grid-template-columns:1fr;}
+      .section,.section-sm{padding:5rem 1.5rem;}
+      .cta-banner{padding:6rem 1.5rem;}
+      .footer-bottom{flex-direction:column;align-items:flex-start;}
     }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
-  <nav id="nav">
-    <a href="/" class="nav-logo">
-      <img src="logo black.png" alt="CORTEX" class="nav-logo-img" />
-    </a>
+  <nav id="nav" class="dark-mode">
+    <a href="/" class="nav-logo"><img src="logo black.png" alt="CORTEX"/></a>
     <ul class="nav-links">
       <li><a href="/" class="active">Home</a></li>
       <li><a href="/about.html">About</a></li>
-      <li><a href="/leadership-performance.html">Leadership & Performance</a></li>
+      <li><a href="/leadership-performance.html">Leadership &amp; Performance</a></li>
       <li><a href="/coaching.html">Coaching</a></li>
       <li><a href="/speaking.html">Speaking</a></li>
     </ul>
-    <a href="/contact.html" class="btn nav-cta">Get In Touch</a>
+    <a href="/contact.html" class="nav-cta">Get In Touch</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
@@ -543,103 +406,180 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-tag">Leadership & Performance Insights</div>
-      <h1>Navigate Complexity.<br /><em>Drive Impact.</em></h1>
-      <p class="hero-sub">Insights and coaching for leaders navigating complexity and driving meaningful impact. Strategic perspective on leadership development, organizational performance, and human potential.</p>
-      <div class="hero-cta">
-        <a href="/coaching.html" class="btn btn-primary">Explore Coaching</a>
-        <a href="/contact.html" class="btn btn-secondary">Get In Touch</a>
+      <div class="hero-eyebrow">Executive Coaching &amp; Leadership Performance</div>
+      <h1>Navigate Complexity.<br/><em>Drive Impact.</em></h1>
+      <p class="hero-sub">17+ years in healthcare and biotech. MSc in Neuroscience. MBA. Certified coach. Shannon Corley works with leaders navigating real complexity — and the people depending on them.</p>
+      <div class="hero-actions">
+        <a href="/coaching.html" class="btn-primary">Explore Coaching</a>
+        <a href="/about.html" class="btn-ghost">About Shannon</a>
       </div>
     </div>
     <div class="hero-image">
-      <img src="pUxPLkH5TXaXVC2csGfMgOueOlz_Xx9KxDC8ZkpXR5PyorfWMug6wBOBw08sJ9_TtVK2vuEZG2L6Fgxu_QgM1IK716RTOKcRDnzl6sF9UVCJSUMjhkv0Q0H647XD00OAS_6cF_DZtuc5FBOzrDFYbR_RCenpKeWXSx4Fm1pFc0ox90wrtIqtxusCM15xTGQE.jpg" alt="Leadership and Performance">
+      <img src="pUxPLkH5TXaXVC2csGfMgOueOlz_Xx9KxDC8ZkpXR5PyorfWMug6wBOBw08sJ9_TtVK2vuEZG2L6Fgxu_QgM1IK716RTOKcRDnzl6sF9UVCJSUMjhkv0Q0H647XD00OAS_6cF_DZtuc5FBOzrDFYbR_RCenpKeWXSx4Fm1pFc0ox90wrtIqtxusCM15xTGQE.jpg" alt="Leadership and Performance"/>
     </div>
+    <div class="hero-scroll">Scroll to explore</div>
   </section>
 
-  <!-- FEATURED INSIGHTS -->
-  <section>
+  <!-- MARQUEE -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-inner">
+      <span>Executive Coaching</span><span class="dot">◆</span>
+      <span>Leadership Development</span><span class="dot">◆</span>
+      <span>Organizational Performance</span><span class="dot">◆</span>
+      <span>Strategic Advisory</span><span class="dot">◆</span>
+      <span>Speaking &amp; Facilitation</span><span class="dot">◆</span>
+      <span>Human Potential</span><span class="dot">◆</span>
+      <span>Executive Coaching</span><span class="dot">◆</span>
+      <span>Leadership Development</span><span class="dot">◆</span>
+      <span>Organizational Performance</span><span class="dot">◆</span>
+      <span>Strategic Advisory</span><span class="dot">◆</span>
+      <span>Speaking &amp; Facilitation</span><span class="dot">◆</span>
+      <span>Human Potential</span><span class="dot">◆</span>
+    </div>
+  </div>
+
+  <!-- ABOUT STRIP -->
+  <div class="about-strip reveal">
+    <div class="about-strip-text">
+      <div class="section-label">About Shannon</div>
+      <h2>Leadership Through <em>Complexity</em></h2>
+      <p class="lead">From neuroscience labs at McGill and the University of Calgary, to leading teams across Western Canada's healthcare and biotech sector — Shannon brings a rare combination of scientific rigor, commercial leadership, and certified coaching practice to every engagement.</p>
+      <a href="/about.html" class="btn-outline">Learn More</a>
+    </div>
+    <div class="about-strip-visual">
+      <img src="Shannon.jpg" alt="Shannon Corley"/>
+    </div>
+  </div>
+
+  <!-- INSIGHTS -->
+  <div class="section reveal">
     <div class="section-label">Featured Insights</div>
-    <h2>Leadership Perspectives</h2>
-    <p>Thoughts on leading effectively, understanding human behavior, and building high-performing teams.</p>
-    
+    <h2>Leadership <em>Perspectives</em></h2>
     <div class="insights-grid">
       <div class="insight-card">
-        <h3>Complexity & Leadership</h3>
-        <p>How to think about complex challenges, navigate uncertainty, and make decisions that matter.</p>
-        <a href="/leadership-performance.html" class="insight-link">Read more</a>
+        <div class="insight-num">01</div>
+        <h3>Complexity &amp; Leadership</h3>
+        <p>How the best leaders build cognitive capacity to operate effectively in high-stakes, ambiguous environments.</p>
+        <a href="/leadership-performance.html" class="insight-link">Read More</a>
       </div>
       <div class="insight-card">
+        <div class="insight-num">02</div>
         <h3>Human Performance</h3>
-        <p>Understanding what drives performance, motivation, and sustainable high achievement in teams.</p>
-        <a href="/leadership-performance.html" class="insight-link">Read more</a>
+        <p>The neuroscience and behavioral psychology behind peak performance and sustainable organizational results.</p>
+        <a href="/leadership-performance.html" class="insight-link">Read More</a>
       </div>
       <div class="insight-card">
-        <h3>Coaching & Development</h3>
-        <p>The role of coaching in leadership development and how to accelerate growth and impact.</p>
-        <a href="/coaching.html" class="insight-link">Read more</a>
+        <div class="insight-num">03</div>
+        <h3>Coaching &amp; Development</h3>
+        <p>The role of executive coaching in accelerating leadership growth and driving meaningful organizational impact.</p>
+        <a href="/coaching.html" class="insight-link">Read More</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- CTA -->
-  <section class="cta-section">
+  <!-- SERVICES -->
+  <div class="section reveal" style="padding-top:0;">
+    <div class="section-label">What I Offer</div>
+    <h2>How We <em>Work Together</em></h2>
+    <div class="services-row">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/>
+          </svg>
+        </div>
+        <h3>Executive Coaching</h3>
+        <p>One-on-one coaching engagements designed to unlock your leadership potential and navigate your most complex challenges.</p>
+        <a href="/coaching.html" class="card-link">Explore Coaching</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8m-4-4v4"/>
+          </svg>
+        </div>
+        <h3>Speaking &amp; Facilitation</h3>
+        <p>Keynotes and workshops that challenge thinking, spark conversation, and equip teams with actionable leadership frameworks.</p>
+        <a href="/speaking.html" class="card-link">Explore Speaking</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <h3>Leadership Insights</h3>
+        <p>Research-backed perspectives on leadership development, organizational performance, and the human dimensions of business.</p>
+        <a href="/leadership-performance.html" class="card-link">Read Insights</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner reveal">
     <h2>Ready to Explore?</h2>
-    <p>Whether you're interested in coaching, speaking, or insights, let's connect and explore how I can support your leadership journey.</p>
-    <a href="/contact.html" class="btn btn-primary">Get In Touch</a>
-  </section>
+    <p>Whether you're interested in coaching, speaking, or insights — let's connect and explore how we can work together.</p>
+    <a href="/contact.html" class="btn-primary">Get In Touch</a>
+  </div>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 CORTEX · Leadership & Performance</p>
-    <p style="font-size: 0.85rem; color: rgba(245,245,243,0.7); margin-top: 1rem;">Shannon Corley</p>
-    <div class="footer-links">
-      <a href="/about.html">About</a>
-      <a href="/leadership-performance.html">Insights</a>
-      <a href="/coaching.html">Coaching</a>
-      <a href="/speaking.html">Speaking</a>
-      <a href="/contact.html">Contact</a>
-      <a href="https://www.linkedin.com/in/shannon-corley-msc-mba/" target="_blank" rel="noopener">LinkedIn</a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo black.png" alt="CORTEX" class="footer-logo"/>
+        <p>Executive coaching and leadership performance insights for leaders navigating complexity and driving meaningful organizational impact.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/leadership-performance.html">Insights</a></li>
+          <li><a href="/coaching.html">Coaching</a></li>
+          <li><a href="/speaking.html">Speaking</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/shannon-corley-msc-mba/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="mailto:shannon@cortexlp.com">shannon@cortexlp.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 CORTEX · Leadership &amp; Performance · Shannon Corley</p>
+      <a href="https://stackwell.digital" class="credit">Website by Stackwell.Digital</a>
     </div>
   </footer>
 
   <script>
-    // Nav scroll effect
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
+    const nav=document.getElementById('nav');
+    const hamburger=document.getElementById('hamburger');
+    const mobileMenu=document.getElementById('mobileMenu');
+
+    window.addEventListener('scroll',()=>{
+      const scrolled=window.scrollY>60;
+      nav.classList.toggle('scrolled',scrolled);
+      if(scrolled)nav.classList.remove('dark-mode');
+      else nav.classList.add('dark-mode');
     });
 
-    // Active nav link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      if (link.pathname === window.location.pathname) {
-        link.classList.add('active');
-      }
-    });
-
-    // Hamburger menu
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click',()=>{
       hamburger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':'';
     });
+    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow='';
+    }));
 
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // Set active link in mobile menu
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      if (link.pathname === window.location.pathname) {
-        link.classList.add('active');
-      }
-    });
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   </script>
 </body>
 </html>
