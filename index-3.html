@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CORTEX Leadership & Performance</title>
+  <meta name="description" content="Something exceptional is coming. CORTEX Leadership & Performance — executive coaching and leadership development with Shannon Corley." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://www.cortexlp.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKS8T9G406"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EKS8T9G406');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0F2747;
+      --bordeaux: #4A0F1E;
+      --black: #0B0B0B;
+      --off-white: #F5F5F3;
+      --warm-gray: #DAD7D2;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Montserrat', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--black);
+      color: var(--off-white);
+      font-family: var(--sans);
+      overflow: hidden;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Deep background gradient */
+    .bg {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(74,15,30,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 20%, rgba(15,39,71,0.5) 0%, transparent 70%),
+        var(--black);
+      z-index: 0;
+    }
+
+    /* Thin horizontal rule — top decoration */
+    .rule-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--bordeaux), transparent);
+      z-index: 10;
+    }
+
+    /* Main layout */
+    .stage {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* Eyebrow */
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(245,245,243,0.45);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.3s;
+    }
+
+    /* Logo / wordmark */
+    .wordmark {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--off-white);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 0.5s;
+      position: relative;
+    }
+
+    .wordmark::after {
+      content: '';
+      display: block;
+      width: 3rem;
+      height: 1px;
+      background: var(--bordeaux);
+      margin: 1.5rem auto 0;
+      opacity: 0;
+      animation: expandLine 0.8s ease forwards 1.2s;
+    }
+
+    /* Tagline */
+    .tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 400;
+      color: rgba(245,245,243,0.7);
+      margin-top: 2rem;
+      max-width: 480px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.9s;
+    }
+
+    /* Sub message */
+    .sub {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,245,243,0.35);
+      margin-top: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 1.3s;
+    }
+
+    /* Contact link */
+    .contact-link {
+      margin-top: 1.2rem;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 1.5s;
+    }
+
+    .contact-link a {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,245,243,0.5);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(74,15,30,0.6);
+      padding-bottom: 2px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .contact-link a:hover {
+      color: var(--off-white);
+      border-color: var(--bordeaux);
+    }
+
+    /* Footer */
+    .footer {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,245,243,0.2);
+      z-index: 10;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 1.8s;
+    }
+
+    .footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes expandLine {
+      from { width: 0; opacity: 0; }
+      to   { width: 3rem; opacity: 1; }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      html, body { overflow: hidden; }
+      .tagline { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="rule-top"></div>
+
+  <main class="stage">
+    <p class="eyebrow">Shannon Corley · MSc · MBA · CPC</p>
+    <h1 class="wordmark">CORTEX</h1>
+    <p class="tagline">Leadership &amp; Performance</p>
+    <p class="sub">Something exceptional is coming</p>
+    <div class="contact-link">
+      <a href="mailto:shannon@cortexlp.com">shannon@cortexlp.com</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="https://stackwell.digital" target="_blank" rel="noopener">Website by Stackwell.Digital</a>
+  </footer>
+</body>
+</html>
